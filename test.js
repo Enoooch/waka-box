@@ -7,7 +7,7 @@ async function test() {
   const stats = await wakatime.getMyStats({ range: RANGE.LAST_7_DAYS });
   console.log(stats.data);
 
-  for (let i = 0; i < Math.min(stats.data.languages.length, 2); i++) {
+  for (let i = 0; i < Math.min(stats.data.languages.length, 10); i++) {
     const data = stats.data.languages[i];
     const { name, percent, text: time } = data;
     console.log(`${name} - ${percent}% - ${time}`);
